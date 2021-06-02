@@ -1,9 +1,10 @@
 const Joi = require("joi");
 const express = require("express");
-const router = express.Router();
+const cors = require("cors");
 const TweetModel = require("../models/tweet");
+const router = express.Router();
 
-router.get("/", async (_, res) => {
+router.get("/", cors(), async (_, res) => {
   const tweets = await TweetModel.find({});
   try {
     res.send(tweets);
@@ -12,7 +13,7 @@ router.get("/", async (_, res) => {
   }
 });
 
-router.post("/", async (req, res) => {
+router.post("/", cors(), async (req, res) => {
   const schema = Joi.object({
     userName: Joi.string().required(),
     tagName: Joi.string().required(),
