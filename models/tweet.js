@@ -4,7 +4,7 @@ const TweetSchema = new mongoose.Schema({
   avatar: {
     type: String,
     trim: true,
-    defalt: "https://source.unsplash.com/random/50x50",
+    default: "https://source.unsplash.com/random/50x50",
   },
   userName: {
     type: String,
