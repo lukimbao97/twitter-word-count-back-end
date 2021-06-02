@@ -16,6 +16,7 @@ router.post("/", async (req, res) => {
   const schema = Joi.object({
     userName: Joi.string().required(),
     tagName: Joi.string().required(),
+    avatar: Joi.string(),
     tweet: Joi.string().min(1).max(50).required(),
   });
 
